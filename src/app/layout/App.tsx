@@ -9,7 +9,8 @@ import ProjectsPage from "../../features/projects/projects-page";
 import PublicRoute from "./public-route";
 import PageNotFound from './page-not-found';
 import TeamPage from "../../features/team/team-page";
-import ProfilePage from "../../features/profile/profile-page";
+import ProfileViewPage from "../../features/profile/view/profile-page";
+import ProfileEditPage from "../../features/profile/form/profile-edit-page";
 
 function App() {
 
@@ -34,7 +35,8 @@ function App() {
                                 <PrivateRoute exact path={'/dashboard'} component={DashboardPage}/>
                                 <PrivateRoute exact path={'/projects'} component={ProjectsPage}/>
                                 <PrivateRoute exact path={'/team'} component={TeamPage}/>
-                                <PrivateRoute exact path={'/profile'} component={ProfilePage}/>
+                                <PrivateRoute exact path={'/profile'} component={ProfileViewPage}/>
+                                <PrivateRoute exact path={'/edit/:id'} component={ProfileEditPage}/>
                                 <Route component={PageNotFound}/>
                             </Switch>
                         </Fragment>

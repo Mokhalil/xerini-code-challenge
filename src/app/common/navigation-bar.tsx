@@ -20,7 +20,7 @@ const NavigationBar = () => {
                <div className={'max-w-7xl mx-auto px-10'}>
                    <div className={'flex flex-row items-center'}>
                        <div>
-                           <img className={'h-12 w-64 fill-current text-gray-500'} src={'Xerini-logo-lock-up.svg'}/>
+                           <img className={'h-12 w-64 fill-current text-gray-500'} src={'/Xerini-logo-lock-up.svg'}/>
                        </div>
                        <div className={'ml-24'}>
                            <div className={'space-x-4 items-baseline'}>
