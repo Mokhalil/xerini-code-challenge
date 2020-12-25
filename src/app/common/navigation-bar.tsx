@@ -27,7 +27,7 @@ const NavigationBar = () => {
                                <NavLink to="/" className={setStyle('/')}>Dashboard</NavLink>
                                <NavLink to="/team" className={setStyle('/team')}>Team</NavLink>
                                <NavLink to="/projects" className={setStyle('/projects')}>Project</NavLink>
-                               <NavLink to="/reports" className={setStyle('/reports')}>Reports</NavLink>
+                               <NavLink to="/profile" className={setStyle('/profile')}>Profile</NavLink>
                            </div>
                        </div>
                    </div>

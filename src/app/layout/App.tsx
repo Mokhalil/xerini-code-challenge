@@ -34,7 +34,7 @@ function App() {
                                 <PrivateRoute exact path={'/dashboard'} component={DashboardPage}/>
                                 <PrivateRoute exact path={'/projects'} component={ProjectsPage}/>
                                 <PrivateRoute exact path={'/team'} component={TeamPage}/>
-                                <PrivateRoute exact path={'/reports'} component={ReportsPage}/>
+                                <PrivateRoute exact path={'/profile'} component={ReportsPage}/>
                                 <Route component={PageNotFound}/>
                             </Switch>
                         </Fragment>
