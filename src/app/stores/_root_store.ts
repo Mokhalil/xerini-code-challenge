@@ -9,7 +9,6 @@ export class StateStore {
     Common : CommonStore;
 
     constructor() {
-        makeAutoObservable(this);
         this.Users = new UserStore(this);
         this.Common = new CommonStore(this);
     }
