@@ -1,8 +1,8 @@
 import {observer} from 'mobx-react-lite';
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useContext, useState} from 'react';
 import './App.css';
 import {StoreContext} from './app/stores/_root_store';
-import LoginPage from "./features/login/login-page";
+import ApplicationShell from "./app/layout/application-shell";
 
 function App() {
 
@@ -11,7 +11,8 @@ function App() {
 
     return (
         <div>
-            <LoginPage/>
+            {/*<LoginPage/>*/}
+            <ApplicationShell></ApplicationShell>
         </div>
     );
 }
