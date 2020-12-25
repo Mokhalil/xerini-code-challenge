@@ -5,7 +5,7 @@ const LoginPage = () => {
     return (
         <div className={'bg-gray-50 min-h-screen flex flex-col justify-center px-8 py-12'}>
             <div className={'mx-auto w-full max-w-md'}>
-                <img className={'mx-auto w-auto'} src={'Xerini-logo-lock-up.svg'}/>
+                <img className={'mx-auto w-auto'} src={'Xerini-logo.svg'}/>
                 <div className={'mt-6 text-center text-3xl font-extrabold text-gray-900'}>Sign into your account</div>
                 <p className="mt-2 text-center text-lg text-gray-600 max-w">
                     Or

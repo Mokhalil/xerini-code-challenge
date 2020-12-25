@@ -1,14 +1,14 @@
 import {StateStore} from "./_root_store";
-import {makeAutoObservable} from "mobx";
+import {makeAutoObservable, runInAction} from "mobx";
 import {IUser} from "../models/user";
-import { UserService} from '../services/UserService'
+import {UserService} from '../services/UserService'
 import {LoginRquest} from "../models/requests/login-request";
 
 export class UserStore {
 
     Parent: StateStore;
-    User : IUser|undefined = undefined;
-    UserService : UserService|undefined= undefined;
+    User: IUser | undefined = undefined;
+    UserService: UserService | undefined = undefined;
 
     constructor(root: StateStore) {
         makeAutoObservable(this);
@@ -16,16 +16,24 @@ export class UserStore {
         this.UserService = new UserService();
     }
 
-    public async Login (request : LoginRquest){
-        let fromServer : IUser;
+    public async Login(request: LoginRquest) {
+        let fromServer: IUser;
 
         try {
-            fromServer= await this.UserService?.Login(request)!;
-        }
-        catch (error){
+            fromServer = await this.UserService?.Login(request)!;
+            runInAction(() => {
+                this.User = fromServer;
+            })
+        } catch (error) {
             console.log('Unable to authenticate user');
             throw  error;
         }
         return fromServer;
     }
+
+    get IsLoggedIn (){
+        return true;
+    }
+
+
 }
