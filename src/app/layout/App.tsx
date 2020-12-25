@@ -9,7 +9,7 @@ import ProjectsPage from "../../features/projects/projects-page";
 import PublicRoute from "./public-route";
 import PageNotFound from './page-not-found';
 import TeamPage from "../../features/team/team-page";
-import ReportsPage from "../../features/reports/reports-page";
+import ProfilePage from "../../features/profile/profile-page";
 
 function App() {
 
@@ -34,7 +34,7 @@ function App() {
                                 <PrivateRoute exact path={'/dashboard'} component={DashboardPage}/>
                                 <PrivateRoute exact path={'/projects'} component={ProjectsPage}/>
                                 <PrivateRoute exact path={'/team'} component={TeamPage}/>
-                                <PrivateRoute exact path={'/profile'} component={ReportsPage}/>
+                                <PrivateRoute exact path={'/profile'} component={ProfilePage}/>
                                 <Route component={PageNotFound}/>
                             </Switch>
                         </Fragment>

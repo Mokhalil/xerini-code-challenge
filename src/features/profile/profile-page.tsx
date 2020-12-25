@@ -1,7 +1,7 @@
 import React from 'react';
 import ApplicationShell from "../../app/layout/application-shell";
 
-const ReportsPage = () => {
+const ProfilePage = () => {
     return (
         <ApplicationShell>
             Reports
@@ -9,4 +9,4 @@ const ReportsPage = () => {
     );
 };
 
-export default ReportsPage;
+export default ProfilePage;
