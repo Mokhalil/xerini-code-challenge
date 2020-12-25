@@ -12,6 +12,9 @@ export const ActualUserService = {
 }
 
 export class UserService {
+    constructor() {
+        console.log('Initializing user services')
+    }
     async Login(loginRequest: LoginRquest): Promise<IUser> {
         let user: any = undefined;
 
@@ -34,5 +37,30 @@ export class UserService {
         return new Promise((resolve) => {
             resolve(user);
         })
+    }
+
+    async Current(token:string):Promise<IUser>{
+        let user : IUser;
+
+        await delay(3000);
+
+        const found: IUser[] = users.filter((item: IUser) => {
+            return ((item.token === token))
+        });
+
+        console.log(found);
+        if (found && found[0]) {
+            if (found[0].token === token)
+                user = found[0];
+            else
+                throw Error('unable to match token to a user');
+        } else {
+            throw Error('Unable to find user in the db.')
+        }
+
+        return new Promise((resolve) => {
+            resolve(user);
+        })
+
     }
 }

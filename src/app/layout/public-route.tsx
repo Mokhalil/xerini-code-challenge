@@ -11,7 +11,7 @@ interface IProps extends RouteProps {
 
 const PublicRoute:React.FC<IProps> = ({component: Component, restricted, ...rest}) => {
     const store = useContext(StoreContext);
-
+console.log(store.Users.IsLoggedIn);
     return (
         // restricted = false meaning public route
         // restricted = true meaning restricted route

@@ -1,5 +1,9 @@
-import React from 'react';
-import LoginForm from './login-form';
+import React, {useContext, useState} from 'react';
+import LoginForm from './form/login-form';
+import {StoreContext} from "../../app/stores/_root_store";
+import {IUser} from "../../app/models/user";
+import {useHistory} from 'react-router-dom'
+import {observer} from "mobx-react-lite";
 
 const LoginPage = () => {
 
@@ -50,4 +54,4 @@ const LoginPage = () => {
     );
 };
 
-export default LoginPage;
+export default observer(LoginPage);

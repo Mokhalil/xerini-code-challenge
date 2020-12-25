@@ -1,5 +1,5 @@
 import {observer} from 'mobx-react-lite';
-import React, {Fragment, useContext, useState} from 'react';
+import React, {Fragment, useContext, useEffect, useState} from 'react';
 import {StoreContext} from '../stores/_root_store';
 import {Route, Switch, withRouter} from 'react-router-dom';
 import LoginPage from "../../features/login/login-page";
@@ -15,6 +15,11 @@ function App() {
 
     const store = useContext(StoreContext);
     const [hasError, setError] = useState();
+
+
+    useEffect(()=>{
+        store.Users.GetUser().then(()=>{}).catch((err)=>setError(err));
+    })
 
     return (
         <Fragment>

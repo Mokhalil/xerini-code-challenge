@@ -1,6 +1,7 @@
 export class LoginRquest{
     username : string = '';
     password : string ='';
+    rememberUser : boolean=false
 
     constructor(username?:string, password?: string,rememberMe?:boolean) {
         this.username = (username)?username:'';

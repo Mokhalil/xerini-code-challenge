@@ -8,21 +8,21 @@ export class UserStore {
 
     Parent: StateStore;
     User: IUser | undefined = undefined;
-    UserService: UserService | undefined = undefined;
+    Service: UserService = new UserService();
 
     constructor(root: StateStore) {
-        makeAutoObservable(this);
+        makeAutoObservable(this, {Parent: false});
         this.Parent = root;
-        this.UserService = new UserService();
+        //this.UserService = new UserService();
     }
 
-    public async Login(request: LoginRquest) {
+    async GetUser() {
         let fromServer: IUser;
-
         try {
-            fromServer = await this.UserService?.Login(request)!;
+            fromServer = await this.Service.Current(this.Parent.Common.Token!);
             runInAction(() => {
                 this.User = fromServer;
+                this.Parent.Common.SetToken(fromServer.token);
             })
         } catch (error) {
             console.log('Unable to authenticate user');
@@ -31,9 +31,23 @@ export class UserStore {
         return fromServer;
     }
 
-    get IsLoggedIn (){
-        return true;
+    async Login(request: LoginRquest) {
+        let fromServer: IUser;
+        try {
+            console.log(this);
+            fromServer = await this.Service?.Login(request);
+            runInAction(() => {
+                this.User = fromServer;
+                this.Parent.Common.SetToken(fromServer.token);
+            })
+        } catch (error) {
+            console.log('Unable to authenticate user');
+            throw  error;
+        }
+        return fromServer;
     }
 
-
+    get IsLoggedIn() {
+        return !!this.User;
+    }
 }

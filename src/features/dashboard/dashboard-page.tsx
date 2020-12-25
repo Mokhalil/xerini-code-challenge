@@ -1,5 +1,6 @@
 import React from 'react';
 import ApplicationShell from '../../app/layout/application-shell';
+import {observer} from "mobx-react-lite";
 
 const DashboardPage = () => {
     return (
@@ -9,4 +10,4 @@ const DashboardPage = () => {
     );
 };
 
-export default DashboardPage;
+export default observer(DashboardPage);

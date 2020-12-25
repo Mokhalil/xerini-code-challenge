@@ -10,7 +10,7 @@ interface IProps extends RouteProps {
 const PrivateRoute:React.FC<IProps> = ({component: Component, ...rest}) => {
 
     const store = useContext(StoreContext);
-
+console.log(store.Users.IsLoggedIn)
     return (
         // Show the component only when the user is logged in
         // Otherwise, redirect the user to /signin page

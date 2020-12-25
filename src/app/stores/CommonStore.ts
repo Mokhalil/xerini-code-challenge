@@ -4,7 +4,7 @@ import { reaction } from "mobx";
 
 export class CommonStore{
     Parent : StateStore;
-    Token :string| null = null;
+    Token :string| null = window.localStorage.getItem('jwt');
     AppLoaded : boolean = false;
 
     constructor(root:StateStore) {
