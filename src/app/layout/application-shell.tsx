@@ -16,7 +16,7 @@ const ApplicationShell = (props:any) => {
                 </div>
             </header>
             <main className={'bg-gray-100'}>
-                <div className={'mx-auto max-w-7xl h-screen px-10 py-4'}>
+                <div className={'mx-auto max-w-7xl h-full px-10 py-4'}>
                     {props.children}
                 </div>
             </main>

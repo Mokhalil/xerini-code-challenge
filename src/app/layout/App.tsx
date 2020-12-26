@@ -10,7 +10,8 @@ import PublicRoute from "./public-route";
 import PageNotFound from './page-not-found';
 import TeamPage from "../../features/team/team-page";
 import ProfileViewPage from "../../features/profile/view/profile-page";
-import ProfileEditPage from "../../features/profile/form/profile-edit-page";
+import ProfileEditPage from "../../features/profile/form/profile-form-page";
+import ProfileConfirmPage from "../../features/profile/form/profile-confirm-page";
 
 function App() {
 
@@ -18,8 +19,10 @@ function App() {
     const [hasError, setError] = useState();
 
 
-    useEffect(()=>{
-        store.Users.GetUser().then(()=>{}).catch((err)=>setError(err));
+    useEffect(() => {
+        if (!store.Users.User)
+            store.Users.GetUser().then(() => {
+            }).catch((err) => setError(err));
     })
 
     return (
@@ -36,7 +39,8 @@ function App() {
                                 <PrivateRoute exact path={'/projects'} component={ProjectsPage}/>
                                 <PrivateRoute exact path={'/team'} component={TeamPage}/>
                                 <PrivateRoute exact path={'/profile'} component={ProfileViewPage}/>
-                                <PrivateRoute exact path={'/edit/:id'} component={ProfileEditPage}/>
+                                <PrivateRoute exact path={'/edit'} component={ProfileEditPage}/>
+                                <PrivateRoute exact path={'/confirm'} component={ProfileConfirmPage}/>
                                 <Route component={PageNotFound}/>
                             </Switch>
                         </Fragment>

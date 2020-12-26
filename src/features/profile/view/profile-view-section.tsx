@@ -27,7 +27,7 @@ const ProfileViewSection = ({user}: IProps) => {
                         <div className="ml-4 mt-4 flex-shrink-0">
                             <button type="button"
                                     onClick={()=>{
-                                        history.push(`/edit/${store.Users.User?.id}`)
+                                        history.push(`/edit`)
                                     }}
                                     className="relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
                                 Edit Profile
