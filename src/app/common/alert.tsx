@@ -5,7 +5,7 @@ interface IProps {
 }
 const Alert = ({message} : IProps) => {
     return (
-<div>
+<div id={'signin_errors'}>
   <div className="rounded-md bg-red-50 p-4">
     <div className="flex">
       <div className="flex-shrink-0">

@@ -53,6 +53,7 @@ const ProfileForm = ({ user, onSubmit, readonly }: IProps) => {
                       <Field
                         disabled={readonly}
                         {...formik.getFieldProps("first_name")}
+                          id={'first_name'}
                         className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                       />
                       {formik.errors.first_name && formik.touched.first_name ? (
@@ -76,6 +77,7 @@ const ProfileForm = ({ user, onSubmit, readonly }: IProps) => {
                       <Field
                         disabled={readonly}
                         {...formik.getFieldProps("other_names")}
+                        id={'other_names'}
                         className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                       />
                       {formik.errors.other_names &&
@@ -99,6 +101,7 @@ const ProfileForm = ({ user, onSubmit, readonly }: IProps) => {
                     <div className="mt-1 sm:mt-0 sm:col-span-2">
                       <Field
                         disabled={readonly}
+                        id={'email'}
                         {...formik.getFieldProps("email")}
                         className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                       />
@@ -122,6 +125,7 @@ const ProfileForm = ({ user, onSubmit, readonly }: IProps) => {
                     <div className="mt-1 sm:mt-0 sm:col-span-2">
                       <Field
                         disabled={readonly}
+                        id={'address.street'}
                         {...formik.getFieldProps("address.street")}
                         className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                       />
@@ -146,6 +150,7 @@ const ProfileForm = ({ user, onSubmit, readonly }: IProps) => {
                     <div className="mt-1 sm:mt-0 sm:col-span-2">
                       <Field
                         disabled={readonly}
+                        id={'address.town'}
                         {...formik.getFieldProps("address.town")}
                         className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                       />
@@ -170,6 +175,7 @@ const ProfileForm = ({ user, onSubmit, readonly }: IProps) => {
                     <div className="mt-1 sm:mt-0 sm:col-span-2">
                       <Field
                         disabled={readonly}
+                        id={'county'}
                         {...formik.getFieldProps("address.county")}
                         className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                       />
@@ -332,6 +338,7 @@ const ProfileForm = ({ user, onSubmit, readonly }: IProps) => {
                   <Fragment>
                     <button
                       type="button"
+                      id={'go_to_dashboard'}
                       onClick={() => {
                         history.push("/profile");
                       }}
@@ -354,6 +361,7 @@ const ProfileForm = ({ user, onSubmit, readonly }: IProps) => {
                     </button>
                     <button
                       type="submit"
+                      id={'submit_form'}
                       className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                     >
                       Save

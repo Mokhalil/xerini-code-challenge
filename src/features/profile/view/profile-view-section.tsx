@@ -12,7 +12,7 @@ const ProfileViewSection = ({user}: IProps) => {
     const history = useHistory();
     const store = useContext(StoreContext)
     return (
-        <div>
+        <div id={'profile-info'}>
             <div className="bg-white shadow overflow-hidden sm:rounded-lg">
                 <div className="bg-white px-4 py-5 border-gray-200 sm:px-6">
                     <div className="-ml-4 -mt-4 flex justify-between items-center flex-wrap sm:flex-nowrap">
@@ -26,6 +26,7 @@ const ProfileViewSection = ({user}: IProps) => {
                         </div>
                         <div className="ml-4 mt-4 flex-shrink-0">
                             <button type="button"
+                                    id={'edit_profile'}
                                     onClick={()=>{
                                         history.push(`/edit`)
                                     }}

@@ -4,6 +4,7 @@ import {StoreContext} from "../../app/stores/_root_store";
 import {IUser} from "../../app/models/user";
 import {useHistory} from 'react-router-dom'
 import {observer} from "mobx-react-lite";
+import {LoginRquest} from "../../app/models/requests/login-request";
 
 const LoginPage = () => {
 
@@ -12,6 +13,7 @@ const LoginPage = () => {
     const store = useContext(StoreContext);
     const [error, setError]=useState();
     const [loading, setLoading]=useState<boolean>(false);
+    const [loginRequest, setLoginRequest]=useState<LoginRquest>(new LoginRquest());
 
     //handlers
     const onSubmit = async (values: any) => {
@@ -47,7 +49,7 @@ const LoginPage = () => {
             </div>
             <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
                 <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-                    <LoginForm onSubmit={onSubmit} loading={loading} error={error}/>
+                    <LoginForm onSubmit={onSubmit} initialValues={loginRequest} loading={loading} error={error}/>
                 </div>
             </div>
         </div>

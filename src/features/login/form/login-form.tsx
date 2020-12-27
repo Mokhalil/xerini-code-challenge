@@ -9,14 +9,10 @@ interface IProps {
     onSubmit: (values: any) => void;
     loading: boolean;
     error? : string;
+    initialValues : LoginRquest;
 }
 
-const LoginForm = ({onSubmit, loading, error}: IProps) => {
-    //state
-    const [loginRequest, setLoginRequest] = useState<LoginRquest>(
-        new LoginRquest()
-    );
-
+const LoginForm = ({onSubmit, loading, error, initialValues}: IProps) => {
     //handlers
     const onFormSubmit = (values: any) => {
         onSubmit(values);
@@ -26,7 +22,7 @@ const LoginForm = ({onSubmit, loading, error}: IProps) => {
     return (
         <Formik
             onSubmit={onFormSubmit}
-            initialValues={loginRequest}
+            initialValues={initialValues}
             enableReinitialize={true}
             validationSchema={loginFormSchema}
         >
@@ -35,7 +31,7 @@ const LoginForm = ({onSubmit, loading, error}: IProps) => {
                     {(error)?<Alert message={error}/>:''}
                     <div>
                         <label
-                            htmlFor="email"
+                            htmlFor="username"
                             className="block text-sm font-medium text-gray-700"
                         >
                             Email address
@@ -43,11 +39,12 @@ const LoginForm = ({onSubmit, loading, error}: IProps) => {
                         <div className="mt-1">
                             <Field
                                 {...formik.getFieldProps("username")}
+                                id={'username'}
                                 disabled={loading}
                                 className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                             />
                             {formik.errors.username && formik.touched.username ? (
-                                <p className="mt-2 text-sm text-red-600" id="email-error">{formik.errors.username}</p>
+                                <p className="mt-2 text-sm text-red-600" id="username-error">{formik.errors.username}</p>
                             ) : null}
                         </div>
                     </div>
@@ -63,11 +60,12 @@ const LoginForm = ({onSubmit, loading, error}: IProps) => {
                             <Field
                                 {...formik.getFieldProps("password")}
                                 type="password"
+                                id={'password'}
                                 disabled={loading}
                                 className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                             />
                             {formik.errors.password && formik.touched.password ? (
-                                <p className="mt-2 text-sm text-red-600" id="email-error">{formik.errors.password}</p>
+                                <p className="mt-2 text-sm text-red-600" id="password-error">{formik.errors.password}</p>
                             ) : null}
                         </div>
                     </div>
@@ -101,6 +99,7 @@ const LoginForm = ({onSubmit, loading, error}: IProps) => {
                     <div>
                         <button
                             type="submit"
+                            id={'signIn'}
                             disabled={loading}
                             className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-purple-800 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         >
