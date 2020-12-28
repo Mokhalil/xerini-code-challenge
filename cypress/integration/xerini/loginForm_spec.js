@@ -6,7 +6,7 @@ describe('Xerini Code Excerise - Test Suite', function () {
     describe('login page', () => {
 
         beforeEach(() => {
-            cy.visit('http://localhost:3000');
+            cy.visit('https://vagabond-passenger.surge.sh');
         })
 
         it('should correctly load and render the login form if the current user is not signed in', () => {
@@ -60,7 +60,7 @@ describe('Xerini Code Excerise - Test Suite', function () {
 
     describe('User Profile page',()=>{
         beforeEach(()=>{
-            cy.visit('http://localhost:3000/');
+            cy.visit('https://vagabond-passenger.surge.sh/');
             cy.get('#username').type('mk')
             cy.get('#password').type('password1');
             cy.get('#signIn').click();
