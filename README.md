@@ -14,6 +14,8 @@ The following packages/frameworks were employed to build the solution :
 -	React-Testing-Library & Jest for Unit testing 
 -	Cypress for e-2-e testing.
 
+![alt text](https://github.com/Mokhalil/xerini-code-challenge/blob/develop/login_page.jpg)
+
 
 
 ## Available Scripts
