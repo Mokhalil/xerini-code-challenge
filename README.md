@@ -3,7 +3,7 @@ This repository contains a sample user profile application built as part of the 
 
 -	Covers all the required use cases
 -	Deployed to the following url : https://vagabond-passenger.surge.sh 
--	Includes examples of code that unit-test one of the components.
+-	Includes examples of code that unit-tests one of the components.
 -	Includes a script that performs end-2-end testing for the required scenario.
 
 The following packages/frameworks were employed to build the solution :
@@ -13,6 +13,12 @@ The following packages/frameworks were employed to build the solution :
 -	Formik & Yup for forms and validation management.
 -	React-Testing-Library & Jest for Unit testing 
 -	Cypress for e-2-e testing.
+
+![alt text](https://github.com/Mokhalil/xerini-code-challenge/blob/develop/login_page.jpg)
+
+![alt text](https://github.com/Mokhalil/xerini-code-challenge/blob/develop/profile.jpg)
+
+![alt text](https://github.com/Mokhalil/xerini-code-challenge/blob/develop/profile_form.jpg)
 
 
 
