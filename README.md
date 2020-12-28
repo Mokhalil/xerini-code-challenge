@@ -16,6 +16,10 @@ The following packages/frameworks were employed to build the solution :
 
 ![alt text](https://github.com/Mokhalil/xerini-code-challenge/blob/develop/login_page.jpg)
 
+![alt text](https://github.com/Mokhalil/xerini-code-challenge/blob/develop/profile.jpg)
+
+![alt text](https://github.com/Mokhalil/xerini-code-challenge/blob/develop/profile_form.jpg)
+
 
 
 ## Available Scripts
