@@ -14,13 +14,13 @@ The following packages/frameworks were employed to build the solution :
 -	React-Testing-Library & Jest for Unit testing 
 -	Cypress for e-2-e testing.
 
-##Sign-in Screen
+## Sign-in Screen
 ![alt text](https://github.com/Mokhalil/xerini-code-challenge/blob/develop/login_page.jpg)
 
-##Cypress Test Runner
+## Cypress Test Runner
 ![alt text](https://github.com/Mokhalil/xerini-code-challenge/blob/develop/testing.jpg)
 
-##Profile View and Edit Pages
+## Profile View and Edit Pages
 ![alt text](https://github.com/Mokhalil/xerini-code-challenge/blob/develop/profile.jpg)
 
 ![alt text](https://github.com/Mokhalil/xerini-code-challenge/blob/develop/profile_form.jpg)
